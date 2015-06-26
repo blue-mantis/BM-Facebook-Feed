@@ -1,0 +1,23 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	first:        true,
+	label:        "Facebook User ID"|t,
+	id:           'facebookId',
+	name:         'facebookId',
+	instructions: "The facebook user ID (which can be found using http://graph.facebook.com/**username**)"|t,
+	value:        settings.facebookId,
+	autofocus:    true,
+	errors:       settings.getErrors('facebookId')
+}) }}
+
+{{ forms.textField({
+	first:        true,
+	label:        "Items to show"|t,
+	id:           'itemsToShow',
+	name:         'itemsToShow',
+	instructions: "Number of items to show"|t,
+	value:        settings.itemsToShow,
+	autofocus:    true,
+	errors:       settings.getErrors('itemsToShow')
+}) }}
