@@ -11,7 +11,7 @@ class FacebookFeedPlugin extends BasePlugin
 
 	function getVersion()
 	{
-		return '1.1';
+		return '1.2';
 	}
 
 	function getDeveloper()

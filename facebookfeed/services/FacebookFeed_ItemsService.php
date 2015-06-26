@@ -37,6 +37,16 @@ class FacebookFeed_ItemsService extends BaseApplicationComponent
 		$json = json_decode(json_encode($xml->channel));
 		$items = isset($json->item) && is_array($json->item) ? array_slice($json->item, 0, $itemsToShow) : array();
 
+		foreach ($items as &$item) {
+			if (is_object($item->title)) $item->title = '';
+			if (is_object($item->guid)) $item->guid = '';
+			if (is_object($item->title)) $item->title = '';
+			if (is_object($item->link)) $item->link = '';
+			if (is_object($item->description)) $item->description = '';
+			if (is_object($item->pubDate)) $item->pubDate = '';
+			if (is_object($item->author)) $item->author = '';
+		}
+
 		return $items;
 	}
 }
